@@ -40,9 +40,9 @@ public class EmployerManagerConsoleApp {
             case 5:
                 employeeService.sortBySalary();
             case 6:
-                employeeService.filterByService();
+                employeeService.filterBySalary(60000);
             case 7:
-                employeeService.groupByDept();
+                employeeService.groupByDept("IT");
             case 8:
                 System.exit(0);
         }

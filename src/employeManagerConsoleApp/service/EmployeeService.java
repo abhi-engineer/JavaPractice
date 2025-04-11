@@ -3,7 +3,10 @@ package employeManagerConsoleApp.service;
 import employeManagerConsoleApp.entity.Employee;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EmployeeService {
 
@@ -46,15 +49,28 @@ public class EmployeeService {
     }
 
     public void sortBySalary() {
-//        employeeList.stream()..sorted();
+        employeeList.stream()
+                .sorted((e1, e2) -> Float.compare(e1.getSalary(), e2.getSalary()))
+                .forEach(System.out::println);
     }
 
-    public void filterByService() {
-        
+
+
+    public void filterBySalary(float salary) {
+        employeeList.stream()
+                .filter((e) -> e.getSalary() == salary)
+                .forEach(System.out::println);
     }
 
-    public void groupByDept() {
+    public void groupByDept(String dept) {
+        Map<String , List<Employee>> map =  employeeList.stream()
+                .collect(Collectors.groupingBy(e -> e.getDept()));
+
+        map.forEach((dep, emp) -> {
+            System.out.print(dep + " : ");
+            emp.forEach(e -> System.out.print(e.getName() + " "));
+            System.out.println();
+        });
     }
 
-    // other methods like filter, delete, etc.
 }
