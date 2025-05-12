@@ -18,7 +18,7 @@ public class Anagrams {
         return new String(ch);
     }
 
-    public boolean anagram(String s1, String  s2){
+    public boolean isAnagram(String s1, String  s2){
         if(s1.length() != s2.length())
             return false;
         s1 = sort(s1);
@@ -31,7 +31,7 @@ public class Anagrams {
         String s2 = "listen";
         Anagrams obj = new Anagrams();
 
-        boolean b = obj.anagram(s1,s2);
+        boolean b = obj.isAnagram(s1,s2);
 
         System.out.println(b);
     }

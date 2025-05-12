@@ -1,6 +1,5 @@
 package numbers;
-//9² = 81
-//8+1 = 9;
+//9² = 81   ,8+1 = 9;
 public class Neon {
 
     public boolean isNeon(int num) {

@@ -2,7 +2,7 @@ package numbers;
 
 public class PerfectNo {
 
-    public boolean isBoolean(int num){
+    public boolean isPerfectNo(int num){
         int sum = 0;
         for(int i=num-1; i>0; i--){
             if(num%i == 0)
@@ -13,6 +13,6 @@ public class PerfectNo {
 
     public static void main(String[] args) {
         PerfectNo obj = new PerfectNo();
-        System.out.println(obj.isBoolean(6));
+        System.out.println(obj.isPerfectNo(6));
     }
 }

@@ -19,6 +19,5 @@ public class Frequency {
     public static void main(String[] args) {
         Frequency obj = new Frequency();
         obj.calculate("abbcccddddeeeeeffffff");
-
     }
 }
