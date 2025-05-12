@@ -6,9 +6,8 @@ import java.util.Scanner;
 public class Calculator {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        try {
+        try (Scanner input = new Scanner(System.in)) {
             System.out.print("Enter 1st number : ");
             float n1 = input.nextFloat();
 
@@ -39,14 +38,11 @@ public class Calculator {
 
         } catch (InputMismatchException ime) {
             System.out.println("Error: Please enter valid numeric values.");
-        } catch (ArithmeticException ae) {
+        } catch (ArithmeticException | IllegalArgumentException ae) {
             System.out.println("Error: " + ae.getMessage());
-        } catch (IllegalArgumentException iae) {
-            System.out.println("Error: " + iae.getMessage());
         } catch (Exception e) {
             System.out.println("Unexpected error occurred: " + e);
         } finally {
-            input.close();
             System.out.println("Calculator operation completed.");
         }
     }
